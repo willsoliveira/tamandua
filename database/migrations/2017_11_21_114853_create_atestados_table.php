@@ -17,8 +17,11 @@ class CreateAtestadosTable extends Migration
             $table->increments('id');
             $table->string('nome_medico');
             $table->string('conselho');
-            $table->string('numeroConselho');
+            $table->string('numero_conselho');
+            $table->date('data_inicio_atestado');
+            $table->string('duracao_atestado');
             $table->string('cid');
+            $table->string('atendente');
             $table->integer('id_anexos')->unsigned();
             $table->foreign('id_anexos')->references('id')->on('anexos');
             $table->timestamps();
