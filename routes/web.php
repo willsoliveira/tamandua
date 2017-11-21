@@ -25,7 +25,11 @@ Route::group(['prefix'=>'funcionario'], function(){
     Route::put('{id}/atualizar','FuncionarioController@atualizar');
     Route::get('{id}/remover','ProdutosController@remover');//não adicionei um link pq não acho que devamos poder excluir um funcionário
 });
-
+Route::group(['prefix'=>'atestado'], function(){
+    Route::get('',function(){
+        return 'Rota OK';
+    });
+});
 
 Auth::routes();
 
