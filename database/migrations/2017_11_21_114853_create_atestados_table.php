@@ -22,8 +22,8 @@ class CreateAtestadosTable extends Migration
             $table->string('duracao_atestado');
             $table->string('cid');
             $table->string('atendente');
-            $table->integer('id_anexos')->unsigned();
-            $table->foreign('id_anexos')->references('id')->on('anexos');
+            $table->integer('id_funcionario');
+            $table->foreign('id_funcionario')->references('id')->on('funcionarios');
             $table->timestamps();
         });
     }
