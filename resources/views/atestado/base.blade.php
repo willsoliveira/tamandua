@@ -42,15 +42,15 @@
         </tr>
       </thead>
       <tbody>
-        {{--    --}}
+        @foreach($funcionario->atestados as $atestado)
         <tr>
-          <td>data </td>
-          <td>cid </td>
-          <td> tempo</td>
-          <td> pessoa logada no cadastro</td>
-          <td>  Visualizar </td>
+          <td> {{date('d/m/Y',strtotime($atestado->data_inicio_atestado))}} </td>
+          <td> {{$atestado->cid}} </td>
+          <td> {{$atestado->duracao_atestado}} dias</td>
+          <td> {{$atestado->atendente}} </td>
+          <td> Visualizar </td>
         </tr>
-        
+       @endforeach
         <tr>
           <td> ... </td>
           <td> ... </td>

@@ -17,5 +17,8 @@ class Funcionario extends Model
     public function secretaria(){
         return $this->belongsTo(Secretaria::class, 'id_secretaria');
     }
+    public function atestados(){
+        return $this->hasMany(Atestado::class,'id_funcionario');
+    }
 
 }
