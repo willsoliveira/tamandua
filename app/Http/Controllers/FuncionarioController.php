@@ -17,8 +17,8 @@ class FuncionarioController extends Controller
   }
   public function gravar(Request $request  )
   {
-      // $input = $request->all();
-      // Funcionario::create($input);
+      $input = $request->all();
+       Funcionario::create($input);
       return redirect('funcionario');
 
   }
