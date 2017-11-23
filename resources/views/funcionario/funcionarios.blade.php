@@ -4,7 +4,11 @@
 
 @section('content')
   <div class="container">
-    <h2>Funcionários</h2>
+    <div class="row">
+      <h2 class="col md-8"  >Funcionários</h2>
+      <a class=" btn col md-4 " href="/funcionario/cadastrar">Novo Funcinario</a>
+    
+    </div>
     <table class='table table-striped table-cordered table-hover' >
       <thead>
         <tr>

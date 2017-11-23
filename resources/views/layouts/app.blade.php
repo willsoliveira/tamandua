@@ -12,27 +12,61 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+    <nav class="navbar navbar-toggleable-md static-top bg-primary navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="buttton" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item active"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+                             <li class="nav-item active"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink">
+                                    {{ Auth::user()->name }}
+                                </a>
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                        <a class="dropdown-item" href="#">outro</a>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+
                 </div>
 
+            </div>
+            
+            
+        </div>
+    </nav>
+        @yield('content')
+    </div>
+        {{--  <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
@@ -69,12 +103,12 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>  --}}
 
-        @yield('content')
-    </div>
+    
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </body>
 </html>
