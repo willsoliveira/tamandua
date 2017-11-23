@@ -17,8 +17,8 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix'=>'funcionario'], function(){
-    Route::get('','FuncionarioController@index');/* ->middleware('auth'); */
+Route::group(['prefix'=>'funcionario', 'middleware'=>'auth'], function(){
+    Route::get('','FuncionarioController@index');
     Route::get('cadastrar','FuncionarioController@cadastrar');
     Route::post('enviar','FuncionarioController@gravar');
     Route::get('{id}/editar','FuncionarioController@editar');
