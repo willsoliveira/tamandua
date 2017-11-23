@@ -31,8 +31,9 @@
       </select>
     </div>
     <div class="form-group-sm">
-    <button type="submit" name = "salvar" value= 'salvar' class="btn btn-default">Salvar</button> 
-    <button type="submit" name = "salvar" value='atestado' class="btn btn-default">Salvar e Gerar Atestado</button>
+    <button type="submit" name = "salvar" value= 'salvar' class="btn btn-primary">Salvar</button> 
+    <a href="/funcionario" class="btn btn-warning btn-md active" >Calcelar</a>
+    
     </div>
     
     
