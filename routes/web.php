@@ -13,7 +13,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('funcionario');
 });
 
 
@@ -29,7 +29,9 @@ Route::group(['prefix'=>'atestado'], function(){
     Route::get('{id}','AtestadoController@index');
 
 });
-
+Route::get('teste',function(){
+    return view('teste');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
