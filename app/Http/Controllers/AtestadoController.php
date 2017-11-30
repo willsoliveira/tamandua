@@ -8,6 +8,10 @@ class AtestadoController extends Controller
 {
   public function index($id){
     $funcionario=Funcionario::find($id);
-    return view('atestado.base', compact('funcionario') );
+    return view('atestados.base', compact('funcionario') );
+  }
+  public function novoAtestado($id){
+    $funcionario=Funcionario::find($id);
+    return view('atestados.novoAtestado', compact('funcionario'));
   }
 }

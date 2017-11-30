@@ -15,7 +15,8 @@ class CreateAnexosTable extends Migration
     {
         Schema::create('anexos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
+            $table->string('nome_arquivo');
+            $table->string('descricao');
             $table->integer('id_atestado');
             $table->foreign('id_atestado')->references('id')->on('atestados');
             $table->timestamps();

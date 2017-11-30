@@ -15,7 +15,7 @@ class FuncionarioController extends Controller
   public function cadastrar(){
     return view('funcionario.cadastrar');
   }
-  public function gravar(Request $request  )
+  public function gravar(Request $request)
   {
       $input = $request->all();
        Funcionario::create($input);

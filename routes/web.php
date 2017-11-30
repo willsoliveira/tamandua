@@ -23,15 +23,17 @@ Route::group(['prefix'=>'funcionario', 'middleware'=>'auth'], function(){
     Route::post('enviar','FuncionarioController@gravar');
     Route::get('{id}/editar','FuncionarioController@editar');
     Route::put('{id}/atualizar','FuncionarioController@atualizar');
-    Route::get('{id}/remover','ProdutosController@remover');//não adicionei um link pq não acho que devamos poder excluir um funcionário
+    Route::get('{id}/remover','FuncionarioController@remover');//não adicionei um link pq não acho que devamos poder excluir um funcionário
 });
 Route::group(['prefix'=>'atestado'], function(){
     Route::get('{id}','AtestadoController@index');
+    Route::get('{id}/novo','AtestadoController@novoAtestado');
 
 });
 Route::get('teste',function(){
     return view('teste');
 });
+Route::post('teste/anexar','AnexosController@adicionaAnexo');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
