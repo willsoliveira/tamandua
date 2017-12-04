@@ -33,7 +33,7 @@ Route::group(['prefix'=>'atestado'], function(){
 Route::get('teste',function(){
     return view('teste');
 });
-Route::post('teste/anexar','AnexosController@adicionaAnexo');
+Route::post('teste/atestado','AtestadoController@atestado');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
