@@ -5,8 +5,8 @@ $(document).ready(function() {
     $('#NovoAnexo').click (function(e) {
             e.preventDefault();     //prevenir novos clicks
             if (x < campos_max) {
-                $('#anexos').append('<span id="novo"><div class="form-group form-inline col-12"> <label for="anexo" class="col-form-label" >Arquivo: </label><input type="file" name="anexo" id="anexo" class="form-control col-sm" accept="image/*, .pdf" placeholder="Local do Anexo"></div> </div>\
-                <div class="form-group form-inline col-12"> <label for="descricao_anexo" class="col-form-label" >Descrição do Anexo: </label> <input type="text" name="descricao_anexo" id="descricao_anexo" class="form-control col-sm" placeholder="Descrição do Anexo" > </div>\
+                $('#anexos').append('<span id="novo"><div class="form-group form-inline col-12"> <label for="anexo" class="col-form-label" >Arquivo: </label><input type="file" name="anexo[]" id="anexo" class="form-control col-sm" accept="image/*, .pdf" placeholder="Local do Anexo"></div> </div>\
+                <div class="form-group form-inline col-12"> <label for="descricao_anexo" class="col-form-label" >Descrição do Anexo: </label> <input type="text" name="descricao_anexo[]" id="descricao_anexo" class="form-control col-sm" placeholder="Descrição do Anexo" > </div>\
                 <a href="#" class="remover_campo btn btn-warning">Remover</a> </span>');
                     x++;
             }
