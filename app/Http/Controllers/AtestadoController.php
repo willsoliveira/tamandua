@@ -14,4 +14,8 @@ class AtestadoController extends Controller
     $funcionario=Funcionario::find($id);
     return view('atestados.novoAtestado', compact('funcionario'));
   }
+  public function atestado(Request $request){
+    $input = $request->all();
+    print_r($input);
+  }
 }
