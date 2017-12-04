@@ -35,7 +35,7 @@
         </select>
       </div>
       <div class="form-group-sm">
-      <button type="submit" name = "salvar" value= 'salvar' class="btn btn-default">Salvar Mudanças</button> 
+      <button type="submit" name = "salvar" value= 'salvar' class="btn btn-default">Salvar Mudanças</button> <a class="btn btn-warning" href="/funcionario">Cancelar</a>
       </div>
       
       

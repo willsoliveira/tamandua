@@ -5,8 +5,10 @@
 @section('content')
 <fieldset>
   <legend class="text-center"> Novo Atestado de <strong>{{$funcionario->nome}}</strong> </legend>
-  <form action=novoAtestado method="post" >
+    <form action="/teste/atestado" enctype="multipart/form-data" method="post" >
+     
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="atendente" value="{{Auth::user()->name}}"  >
 
     <div class="row">
         <div class="form-group form-inline col-4">
@@ -36,24 +38,25 @@
       </div>
     </div>
     
-    <fieldset class="form-group">
-    <legend>Perícia</legend>
+    <fieldset class="form-group border-field">
+    <legend class="border-field">Perícia</legend>
     <button class='btn btn-default' id='NovaPericia'>Nova Perícia</button>
       <div class="row" id="pericia">
           {{--  DIV de Pericia Dinamica  --}}
       </div>
     </fieldset>
-    <fieldset class="form-group">
-    <legend>Anexos</legend>
+
+    <fieldset class="form-group border-field">
+    <legend class="border-field">Anexos</legend>
       <button class='btn btn-default' id='NovoAnexo'>Novo Anexo</button>  
-      <form action="/teste/anexar" enctype="multipart/form-data" method="post" >
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div id="anexos">
             <!-- RECEBE DIVS DINAMICAS -->
           </div>
-      </form>
-
     </fieldset>
+
+    <div class="form-group row">
+      <button type="submit" name = "salvar" value= 'salvar' class="btn btn-primary col-md">Salvar</button><div class="col-1"> </div> <a class="btn btn-warning col-md" href="/atestado/{{$funcionario->id}}">Cancelar</a>
+    </div>
   </form>
 </fieldset>
 @endsection
