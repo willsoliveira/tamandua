@@ -18,8 +18,13 @@
     cp .env.example .env
 
   #Crie uma nova chave para a aplicação
+
     php artisan key:generate
+
   Em seguida você deve configurar o arquivo .env e rodar as migrations com:
+
     php artisan migrate
+
   Por final rode o Seed das Secretaria
+
     php artisan db:seed --class=SecretariaSeed
