@@ -5,10 +5,11 @@
 @section('content')
 <fieldset>
   <legend class="text-center"> Novo Atestado de <strong>{{$funcionario->nome}}</strong> </legend>
-    <form action="/teste/atestado" enctype="multipart/form-data" method="post" >
+    <form action="salvar" enctype="multipart/form-data" method="post" >
      
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="atendente" value="{{Auth::user()->name}}"  >
+    <input type="hidden" name="id_funcionario" value="{{$funcionario->id}}"  >
 
     <div class="row">
         <div class="form-group form-inline col-4">
@@ -46,13 +47,13 @@
       </div>
     </fieldset>
 
-    <fieldset class="form-group border-field">
+    {{--  <fieldset class="form-group border-field">
     <legend class="border-field">Anexos</legend>
       <button class='btn btn-default' id='NovoAnexo'>Novo Anexo</button>  
           <div id="anexos">
             <!-- RECEBE DIVS DINAMICAS -->
           </div>
-    </fieldset>
+    </fieldset>  --}} <!--IMPLEMENTAR ANEXOS-->
 
     <div class="form-group row">
       <button type="submit" name = "salvar" value= 'salvar' class="btn btn-primary col-md">Salvar</button><div class="col-1"> </div> <a class="btn btn-warning col-md" href="/atestado/{{$funcionario->id}}">Cancelar</a>

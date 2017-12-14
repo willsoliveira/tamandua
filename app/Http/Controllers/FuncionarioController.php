@@ -19,7 +19,7 @@ class FuncionarioController extends Controller
   {
       $input = $request->all();
        Funcionario::create($input);
-      return redirect('funcionario');
+      return redirect()->route('funcionarios');
 
   }
   public function editar($id){
@@ -29,7 +29,7 @@ class FuncionarioController extends Controller
 
   public function atualizar(Request $request, $id){
     $funcionario = Funcionario::find($id)->update($request->all());
-    return redirect('funcionario');
+    return redirect()->route('funcionarios');
   }
 
   public function remover($id){

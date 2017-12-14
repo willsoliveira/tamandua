@@ -47,7 +47,7 @@
           <td> {{$atestado->cid}} </td>
           <td> {{$atestado->duracao_atestado}} dias</td>
           <td> {{$atestado->atendente}} </td>
-          <td> Visualizar </td>
+          <td> <a href="{{$atestado->id}}/visualizar"> Visualizar</a> </td>
         </tr>
        @endforeach
         <tr>

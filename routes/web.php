@@ -18,22 +18,24 @@ Route::get('/', function () {
 
 
 Route::group(['prefix'=>'funcionario', 'middleware'=>'auth'], function(){
-    Route::get('','FuncionarioController@index');
-    Route::get('cadastrar','FuncionarioController@cadastrar');
-    Route::post('enviar','FuncionarioController@gravar');
-    Route::get('{id}/editar','FuncionarioController@editar');
-    Route::put('{id}/atualizar','FuncionarioController@atualizar');
-    Route::get('{id}/remover','FuncionarioController@remover');//não adicionei um link pq não acho que devamos poder excluir um funcionário
+    Route::get('',[ 'as'=>'funcionarios', 'uses'=> 'FuncionarioController@index']);
+    Route::get('cadastrar',[ 'as'=>'cadastrar.funcionario', 'uses'=>'FuncionarioController@cadastrar']);
+    Route::post('enviar', ['as'=>'salvar.funcionario','uses'=>'FuncionarioController@gravar']);
+    Route::get('{id}/editar', ['as'=>'editar.funcionario', 'uses'=>'FuncionarioController@editar']);
+    Route::put('{id}/atualizar', ['as'=>'atualiza.funcionario', 'uses'=>'FuncionarioController@atualizar']);
+    Route::get('{id}/remover',['as'=>'remover.funcionario', 'uses'=>'FuncionarioController@remover']);//não adicionei um link pq não acho que devamos poder excluir um funcionário
 });
-Route::group(['prefix'=>'atestado'], function(){
-    Route::get('{id}','AtestadoController@index');
-    Route::get('{id}/novo','AtestadoController@novoAtestado');
+Route::group(['prefix'=>'atestado', 'middleware'=>'auth'], function(){
+    Route::get('{id}',['as'=>'atestados', 'uses'=>'AtestadoController@index']);
+    Route::get('{id}/novo',['as'=>'novo.atestado', 'uses'=> 'AtestadoController@novoAtestado']);
+    Route::get('{id}/visualizar ',['as'=>'visualizar.atestado', 'uses'=> 'AtestadoController@visualizar']);
+    Route::post('{id}/salvar',['as'=>'salvar.atestado', 'uses'=>'AtestadoController@salvarAtestado']);//envio do atestado sem o anexo
 
 });
 Route::get('teste',function(){
     return view('teste');
 });
-Route::post('teste/atestado','AtestadoController@atestado');
+//Route::post('teste/atestado','AnexosController@adicionaAnexo');//teste de envio somente do anexo
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
