@@ -22,7 +22,7 @@ class CreateFuncionariosTable extends Migration
             $table->String('matricula');
             $table->string('cargo');
             $table->integer('id_secretaria')->unsigned();
-            $table->foreign('id_secretaria')->references('id')->on('secretaria');
+            $table->foreign('id_secretaria')->references('id')->on('secretarias');
             $table->timestamps();
         });
     }
