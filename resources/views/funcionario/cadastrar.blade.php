@@ -14,6 +14,14 @@
       <input type="text" id="cpf" name="cpf" class="form-control" placeholder="CPF"> 
     </div>
     <div class="form-group">
+      <label for="matricula">Matrícula</label>
+      <input type="text" id="matricula" name="matricula" class="form-control" placeholder="Matrícula"> 
+    </div>
+    <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input type="text" id="telefone" name="telefone" class="form-control" placeholder="Telefone"> 
+    </div>
+    <div class="form-group">
       <label for="endereco">Endereço</label>
       <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Endereço"> 
     </div>
