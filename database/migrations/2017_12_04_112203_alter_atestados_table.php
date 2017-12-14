@@ -16,7 +16,7 @@ class AlterAtestadosTable extends Migration
         Schema::table('atestados', function (Blueprint $table) {
             $table->date('data_pericia')->nullable();
             $table->time('horario_pericia')->nullable();
-            $table->string('local')->nullable();
+            $table->string('local_pericia')->nullable();
         });
     }
 
@@ -30,7 +30,7 @@ class AlterAtestadosTable extends Migration
         Schema::table('atestados', function (Blueprint $table) {
             $table->dropColumn('data_pericia');
             $table->dropColumn('horario_pericia');
-            $table->dropColumn('local');
+            $table->dropColumn('local_pericia');
         });
     }
 }
