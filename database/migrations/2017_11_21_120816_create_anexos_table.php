@@ -17,7 +17,7 @@ class CreateAnexosTable extends Migration
             $table->increments('id');
             $table->string('nome_arquivo');
             $table->string('descricao');
-            $table->integer('id_atestado');
+            $table->integer('id_atestado')->unsigned();
             $table->foreign('id_atestado')->references('id')->on('atestados');
             $table->timestamps();
         });

@@ -15,12 +15,11 @@ class Atestado extends Model{
     'cid',
     'atendente',
     'id_funcionario',
-    'data_pericia',
-    'horario_pericia',
-    'local_pericia'
+    'id_pericia'
 
 ];
   public function funcionario(){
     return $this->belongsTo(Funcionario::class, 'id_funcionario');
 }
+
 }

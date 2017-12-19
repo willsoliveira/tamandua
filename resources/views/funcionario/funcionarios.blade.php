@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       <h2 class="col md-8"  >Funcionários</h2>
-      <a class=" btn col md-4 " href="/funcionario/cadastrar">Novo Funcinario</a>
+      <a class=" btn col md-4 " href="/funcionario/cadastrar"> <span class="fa fa-stack-overflow"></span> Novo Funcinario</a>
     
     </div>
     <table class='table table-striped table-cordered table-hover' >

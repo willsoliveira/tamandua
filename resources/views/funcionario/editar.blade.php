@@ -30,7 +30,7 @@
         <select id="id_secretaria" name="id_secretaria" class="form-control">
           <option value=" {{$funcionario->id_secretaria}} ">{{$funcionario->secretaria->nome}} </option>
           @foreach (App\Secretaria::all() as $secretaria)
-            <option value=" {{$secretaria->id}} "> {{$secretaria->sigla}} </option>
+            <option value=" {{$secretaria->id}} "> {{$secretaria->nome}} </option>
           @endforeach
         </select>
       </div>

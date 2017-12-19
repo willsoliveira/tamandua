@@ -11,6 +11,8 @@ class Funcionario extends Model
         'nome',
         'cpf',
         'endereco',
+        'telefone',
+        'matricula',
         'cargo',
         'id_secretaria'
     ];

@@ -15,10 +15,10 @@ class CreatePericiasTable extends Migration
     {
         Schema::create('pericias', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('data');
-            $table->time('horario');
-            $table->string('local');
-            $table->integer('id_atestado');
+            $table->date('data_pericia');
+            $table->time('horario_pericia');
+            $table->string('local_pericia');
+            $table->integer('id_atestado')->unsigned();
             $table->foreign('id_atestado')->references('id')->on('atestados');
             $table->timestamps();
         });
